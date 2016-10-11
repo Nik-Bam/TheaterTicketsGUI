@@ -1,0 +1,29 @@
+.container {
+    -fx-background-image: url("../images/masks.png");
+    -fx-background-size: cover;
+}
+
+#wrapper {
+    -fx-background-image: url("../images/curtains.jpg");
+    -fx-background-size: cover;
+}
+
+.toggle-button:disabled {
+    -fx-opacity: 1;
+}
+
+.toggle-button:selected {
+    -fx-background-color: green;
+}
+
+.chosen {
+    -fx-background-color: green;
+}
+
+.unavailable {
+    -fx-background-color: red;
+}
+
+.table-column {
+    -fx-alignment: center;
+}

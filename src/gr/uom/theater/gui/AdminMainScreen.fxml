@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+
+<StackPane id="wrapper" prefHeight="800.0" prefWidth="1000.0" style="-fx-background-color: #404040;" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gr.uom.theater.application.controllers.AdminMainScreenController">
+   <children>
+      <BorderPane>
+         <top>
+            <Label text="Πίνακας Διαχείρισης Θεατρικών Έργων" textFill="WHITE" BorderPane.alignment="CENTER">
+               <font>
+                  <Font size="24.0" />
+               </font>
+               <BorderPane.margin>
+                  <Insets top="10.0" />
+               </BorderPane.margin>
+            </Label>
+         </top>
+         <right>
+            <VBox spacing="5.0" BorderPane.alignment="CENTER">
+               <children>
+                  <TitledPane animated="false" text="Συγγραφέας">
+                     <content>
+                        <ListView />
+                     </content>
+                  </TitledPane>
+                  <HBox alignment="CENTER" spacing="15.0">
+                     <children>
+                        <Button minWidth="80.0" mnemonicParsing="false" prefWidth="80.0" text="Προσθήκη" />
+                        <Button minWidth="80.0" mnemonicParsing="false" prefWidth="80.0" text="Αφαίρεση" />
+                     </children>
+                  </HBox>
+                  <TitledPane animated="false" layoutX="10.0" layoutY="10.0" text="Σκηνοθέτης">
+                     <content>
+                        <ListView />
+                     </content>
+                  </TitledPane>
+                  <HBox alignment="CENTER" layoutX="10.0" layoutY="156.0" spacing="15.0">
+                     <children>
+                        <Button minWidth="80.0" mnemonicParsing="false" prefWidth="80.0" text="Προσθήκη" />
+                        <Button minWidth="80.0" mnemonicParsing="false" prefWidth="80.0" text="Αφαίρεση" />
+                     </children>
+                  </HBox>
+                  <TitledPane animated="false" layoutX="10.0" layoutY="236.0" text="Ηθοποιοί">
+                     <content>
+                        <ListView />
+                     </content>
+                  </TitledPane>
+                  <HBox alignment="CENTER" layoutX="10.0" layoutY="740.0" spacing="15.0">
+                     <children>
+                        <Button minWidth="80.0" mnemonicParsing="false" prefWidth="80.0" text="Προσθήκη" />
+                        <Button minWidth="80.0" mnemonicParsing="false" prefWidth="80.0" text="Αφαίρεση" />
+                     </children>
+                  </HBox>
+                  <TitledPane animated="false" layoutX="10.0" layoutY="462.0" text="Μουσικοί">
+                     <content>
+                        <ListView />
+                     </content>
+                  </TitledPane>
+                  <HBox alignment="CENTER" layoutX="10.0" layoutY="740.0" spacing="15.0">
+                     <children>
+                        <Button minWidth="80.0" mnemonicParsing="false" prefWidth="80.0" text="Προσθήκη" />
+                        <Button minWidth="80.0" mnemonicParsing="false" prefWidth="80.0" text="Αφαίρεση" />
+                     </children>
+                  </HBox>
+                  <TitledPane animated="false" layoutX="10.0" layoutY="577.0" text="Κουστούμια">
+                     <content>
+                        <ListView />
+                     </content>
+                  </TitledPane>
+                  <HBox alignment="CENTER" layoutX="10.0" layoutY="740.0" spacing="15.0">
+                     <children>
+                        <Button minWidth="80.0" mnemonicParsing="false" prefWidth="80.0" text="Προσθήκη" />
+                        <Button minWidth="80.0" mnemonicParsing="false" prefWidth="80.0" text="Αφαίρεση" />
+                     </children>
+                  </HBox>
+               </children>
+               <BorderPane.margin>
+                  <Insets bottom="10.0" right="10.0" top="10.0" />
+               </BorderPane.margin>
+            </VBox>
+         </right>
+         <center>
+            <VBox alignment="BOTTOM_CENTER" spacing="5.0" BorderPane.alignment="CENTER">
+               <children>
+                  <HBox spacing="5.0">
+                     <children>
+                        <VBox alignment="CENTER" spacing="5.0">
+                           <children>
+                              <Label text="Θεατρικά Έργα" textFill="WHITE">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Label>
+                              <ListView />
+                              <HBox alignment="CENTER" spacing="50.0">
+                                 <children>
+                                    <Button mnemonicParsing="false" text="Προσθήκη" />
+                                    <Button mnemonicParsing="false" text="Αφαίρεση" />
+                                 </children>
+                              </HBox>
+                           </children>
+                        </VBox>
+                        <VBox alignment="TOP_CENTER" spacing="5.0" HBox.hgrow="ALWAYS">
+                           <children>
+                              <HBox spacing="5.0">
+                                 <children>
+                                    <VBox alignment="TOP_CENTER" spacing="5.0" HBox.hgrow="ALWAYS">
+                                       <children>
+                                          <Label text="Τίτλος" textFill="WHITE">
+                                             <font>
+                                                <Font size="14.0" />
+                                             </font>
+                                          </Label>
+                                          <TextField />
+                                       </children>
+                                    </VBox>
+                                    <VBox alignment="TOP_CENTER" layoutX="10.0" layoutY="10.0" spacing="5.0">
+                                       <children>
+                                          <Label text="Χρονολογία" textFill="WHITE">
+                                             <font>
+                                                <Font size="14.0" />
+                                             </font>
+                                          </Label>
+                                          <TextField />
+                                       </children>
+                                    </VBox>
+                                 </children>
+                              </HBox>
+                              <Label text="Περίληψη" textFill="WHITE">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Label>
+                              <TextArea />
+                              <Label layoutX="216.0" layoutY="65.0" text="Εικόνα" textFill="WHITE">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Label>
+                              <ImageView fx:id="image" fitHeight="135.0" fitWidth="300.0" pickOnBounds="true" preserveRatio="true" />
+                              <Button mnemonicParsing="false" text="Προσθήκη" />
+                           </children>
+                        </VBox>
+                     </children>
+                  </HBox>
+                  <Label text="Παραστάσεις" textFill="WHITE">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <TableView maxHeight="200.0">
+                    <columns>
+                      <TableColumn prefWidth="201.0" text="Πόλη" />
+                      <TableColumn prefWidth="125.0" text="Θέατρο" />
+                        <TableColumn prefWidth="171.0" text="Ημερομηνία" />
+                        <TableColumn prefWidth="87.0" text="Ώρα" />
+                        <TableColumn minWidth="0.0" prefWidth="133.0" text="Τιμή" />
+                    </columns>
+                  </TableView>
+                  <HBox alignment="CENTER" layoutX="10.0" layoutY="720.0" spacing="50.0">
+                     <children>
+                        <Button mnemonicParsing="false" text="Προσθήκη" />
+                        <Button mnemonicParsing="false" text="Αφαίρεση" />
+                     </children>
+                  </HBox>
+               </children>
+               <BorderPane.margin>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </BorderPane.margin>
+            </VBox>
+         </center>
+      </BorderPane>
+   </children>
+</StackPane>

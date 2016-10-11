@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import org.controlsfx.control.CheckComboBox?>
+<?import gr.uom.theater.gui.custom.NumberTextField?>
+<StackPane prefHeight="800.0" prefWidth="1000.0" id="wrapper" style="-fx-background-color: #404040;" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gr.uom.theater.application.controllers.MainScreenController">
+    <children>
+        <BorderPane>
+            <center>
+                <VBox alignment="TOP_CENTER" spacing="5.0" BorderPane.alignment="CENTER">
+                    <children>
+                        <HBox spacing="10.0">
+                            <children>
+                                <Label minWidth="-Infinity" text="1)" textFill="WHITE">
+                                    <font>
+                                        <Font size="14.0" />
+                                    </font>
+                                </Label>
+                                <HBox alignment="TOP_CENTER" spacing="10.0" HBox.hgrow="ALWAYS">
+                                    <children>
+                                        <Label alignment="CENTER" minWidth="-Infinity" text="Επιλέξτε Πόλη :" textFill="WHITE">
+                                            <font>
+                                                <Font name="System Bold" size="12.0" />
+                                            </font>
+                                        </Label>
+                                        <ComboBox fx:id="cbCities" prefWidth="200.0" promptText="&lt;Επιλογή&gt;" />
+                                    </children>
+                                </HBox>
+                            </children>
+                            <padding>
+                                <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                            </padding>
+                        </HBox>
+                        <HBox fx:id="playWrapper" disable="true" spacing="10.0">
+                            <children>
+                                <Label minWidth="-Infinity" text="2)" textFill="WHITE">
+                                    <HBox.margin>
+                                        <Insets />
+                                    </HBox.margin>
+                                    <font>
+                                        <Font size="14.0" />
+                                    </font>
+                                </Label>
+                                <HBox alignment="TOP_CENTER" spacing="10.0" HBox.hgrow="ALWAYS">
+                                    <children>
+                                        <VBox alignment="TOP_CENTER" spacing="10.0">
+                                            <children>
+                                                <Label minWidth="-Infinity" text="Επιλέξτε Θεατρικό Έργο :" textFill="WHITE">
+                                                    <VBox.margin>
+                                                        <Insets bottom="-5.0" />
+                                                    </VBox.margin>
+                                                    <font>
+                                                        <Font name="System Bold" size="12.0" />
+                                                    </font>
+                                                </Label>
+                                                <ListView fx:id="lvPlays" prefHeight="240.0" prefWidth="250.0" />
+                                            </children>
+                                        </VBox>
+                                        <VBox alignment="TOP_CENTER" spacing="10.0">
+                                            <children>
+                                                <Label minWidth="-Infinity" text="Φίλτρα" textFill="WHITE">
+                                                    <VBox.margin>
+                                                        <Insets bottom="-5.0" />
+                                                    </VBox.margin>
+                                                    <font>
+                                                        <Font name="System Bold" size="12.0" />
+                                                    </font>
+                                                </Label>
+                                                <HBox alignment="TOP_CENTER" prefWidth="400.0" spacing="10.0">
+                                                    <children>
+                                                        <Label minWidth="-Infinity" text="Ημερομηνία :" textFill="WHITE" />
+                                                        <NumberTextField fx:id="txtYearFrom" alignment="CENTER" promptText="-" />
+                                                        <ComboBox fx:id="cbYearFrom" minWidth="-Infinity" />
+                                                        <Label layoutX="10.0" layoutY="10.0" minWidth="-Infinity" text="έως" textFill="WHITE" />
+                                                        <NumberTextField fx:id="txtYearTo" alignment="CENTER" layoutX="92.0" layoutY="10.0" promptText="-" />
+                                                        <ComboBox fx:id="cbYearTo" layoutX="181.0" layoutY="10.0" minWidth="-Infinity" />
+                                                    </children>
+                                                </HBox>
+                                                <HBox alignment="TOP_CENTER" layoutX="10.0" layoutY="32.0" prefWidth="400.0" spacing="10.0">
+                                                    <children>
+                                                        <Label minWidth="-Infinity" text="Θεατρικός Συγγραφέας :" textFill="WHITE" />
+                                                        <CheckComboBox fx:id="cbWriters" maxWidth="1.7976931348623157E308" HBox.hgrow="ALWAYS" />
+                                                    </children>
+                                                </HBox>
+                                                <HBox alignment="TOP_CENTER" layoutX="10.0" layoutY="67.0" prefWidth="400.0" spacing="10.0">
+                                                    <children>
+                                                        <Label minWidth="-Infinity" prefWidth="132.0" text="Σκηνοθέτης :" textFill="WHITE" />
+                                                        <CheckComboBox fx:id="cbDirectors" maxWidth="1.7976931348623157E308" HBox.hgrow="ALWAYS" />
+                                                    </children>
+                                                </HBox>
+                                                <HBox alignment="TOP_CENTER" layoutX="10.0" layoutY="137.0" prefWidth="400.0" spacing="10.0">
+                                                    <children>
+                                                        <Label minWidth="-Infinity" prefWidth="132.0" text="Ηθοποιοί :" textFill="WHITE" />
+                                                        <CheckComboBox fx:id="cbActors" maxWidth="1.7976931348623157E308" HBox.hgrow="ALWAYS" />
+                                                    </children>
+                                                </HBox>
+                                                <HBox alignment="TOP_CENTER" layoutX="10.0" layoutY="102.0" prefWidth="400.0" spacing="10.0">
+                                                    <children>
+                                                        <Label minWidth="-Infinity" prefWidth="132.0" text="Μουσικοί :" textFill="WHITE" />
+                                                        <CheckComboBox fx:id="cbMusic" maxWidth="1.7976931348623157E308" HBox.hgrow="ALWAYS" />
+                                                    </children>
+                                                </HBox>
+                                                <HBox alignment="TOP_CENTER" layoutX="10.0" layoutY="172.0" prefWidth="400.0" spacing="10.0">
+                                                    <children>
+                                                        <Label minWidth="-Infinity" prefWidth="132.0" text="Κουστούμια :" textFill="WHITE" />
+                                                        <CheckComboBox fx:id="cbCostumes" maxWidth="1.7976931348623157E308" HBox.hgrow="ALWAYS" />
+                                                    </children>
+                                                </HBox>
+                                                <HBox alignment="TOP_CENTER" layoutX="10.0" layoutY="207.0" spacing="20.0">
+                                                    <Button fx:id="btnClear" mnemonicParsing="false" text="Καθαρισμός" />
+                                                    <Button fx:id="btnApplyFilters" mnemonicParsing="false" text="Εφαρμογή" />
+                                                </HBox>
+                                            </children>
+                                        </VBox>
+                                    </children>
+                                </HBox>
+                            </children>
+                            <padding>
+                                <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                            </padding>
+                        </HBox>
+                        <VBox alignment="TOP_CENTER" spacing="10.0">
+                            <children>
+                                <HBox fx:id="playInfoWrapper" alignment="TOP_CENTER" disable="true" spacing="10.0">
+                                    <children>
+                                        <StackPane minWidth="300.0">
+                                            <children>
+                                                <ImageView fx:id="imgPoster" fitHeight="200.0" fitWidth="300.0" pickOnBounds="true" preserveRatio="true">
+                                                    <image>
+                                                        <Image url="@../resources/images/no-image.png" />
+                                                    </image>
+                                                </ImageView>
+                                            </children>
+                                        </StackPane>
+                                        <VBox alignment="TOP_CENTER" spacing="10.0" HBox.hgrow="ALWAYS">
+                                            <children>
+                                                <Label minWidth="-Infinity" text="Πληροφορίες Έργου" textFill="WHITE">
+                                                    <font>
+                                                        <Font name="System Bold" size="12.0" />
+                                                    </font>
+                                                </Label>
+                                                <TextFlow textAlignment="JUSTIFY">
+                                                    <children>
+                                                        <Label text="Συγγραφέας : " textAlignment="JUSTIFY" textFill="WHITE" wrapText="true">
+                                                            <font>
+                                                                <Font name="System Bold" size="12.0" />
+                                                            </font>
+                                                        </Label>
+                                                        <Label fx:id="lblWriter" layoutX="10.0" layoutY="10.0" text="-" textAlignment="JUSTIFY" textFill="WHITE" wrapText="true" />
+                                                        <Label layoutX="10.0" layoutY="10.0" text=" Σκηνοθέτης : " textAlignment="JUSTIFY" textFill="WHITE" wrapText="true">
+                                                            <font>
+                                                                <Font name="System Bold" size="12.0" />
+                                                            </font>
+                                                        </Label>
+                                                        <Label fx:id="lblDirector" layoutX="91.0" layoutY="10.0" text="-" textAlignment="JUSTIFY" textFill="WHITE" wrapText="true" />
+                                                        <Label layoutX="135.0" layoutY="10.0" text=" Παίζουν : " textAlignment="JUSTIFY" textFill="WHITE" wrapText="true">
+                                                            <font>
+                                                                <Font name="System Bold" size="12.0" />
+                                                            </font>
+                                                        </Label>
+                                                        <Label fx:id="lblActors" layoutX="216.0" layoutY="10.0" text="-" textAlignment="JUSTIFY" textFill="WHITE" wrapText="true" />
+                                                        <Label layoutX="260.0" layoutY="10.0" text=" Μουσική : " textAlignment="JUSTIFY" textFill="WHITE" wrapText="true">
+                                                            <font>
+                                                                <Font name="System Bold" size="12.0" />
+                                                            </font>
+                                                        </Label>
+                                                        <Label fx:id="lblMusic" layoutX="341.0" layoutY="10.0" text="-" textAlignment="JUSTIFY" textFill="WHITE" wrapText="true" />
+                                                        <Label layoutX="385.0" layoutY="10.0" text=" Κουστούμια : " textAlignment="JUSTIFY" textFill="WHITE" wrapText="true">
+                                                            <font>
+                                                                <Font name="System Bold" size="12.0" />
+                                                            </font>
+                                                        </Label>
+                                                        <Label fx:id="lblCostumes" layoutX="466.0" layoutY="10.0" text="-" textAlignment="JUSTIFY" textFill="WHITE" />
+                                                    </children>
+                                                </TextFlow>
+                                                <Label minWidth="-Infinity" text="Περίληψη" textFill="WHITE">
+                                                    <font>
+                                                        <Font name="System Bold" size="12.0" />
+                                                    </font>
+                                                </Label>
+                                                  <TextArea fx:id="lblSummary" editable="false" wrapText="true" />
+                                            </children>
+                                        </VBox>
+                                    </children>
+                                </HBox>
+                            </children>
+                            <padding>
+                                <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                            </padding>
+                        </VBox>
+                        <HBox fx:id="performanceWrapper" disable="true" layoutX="110.0" layoutY="110.0" spacing="10.0">
+                            <children>
+                                <Label minWidth="-Infinity" text="3)" textFill="WHITE">
+                                    <font>
+                                        <Font size="14.0" />
+                                    </font>
+                                </Label>
+                                <HBox alignment="TOP_CENTER" spacing="10.0" HBox.hgrow="ALWAYS">
+                                    <children>
+                                        <Label alignment="CENTER" minWidth="-Infinity" text="Επιλέξτε Παράσταση :" textFill="WHITE">
+                                            <font>
+                                                <Font name="System Bold" size="12.0" />
+                                            </font>
+                                        </Label>
+                                        <TableView fx:id="tablePlays" HBox.hgrow="ALWAYS">
+                                            <columns>
+                                                <TableColumn fx:id="theaterCol" prefWidth="241.0" text="Θέατρο" />
+                                                <TableColumn fx:id="dateCol" prefWidth="191.0" text="Ημερομηνία" />
+                                                <TableColumn fx:id="timeCol" minWidth="0.0" prefWidth="119.0" text="Ώρα" />
+                                                <TableColumn fx:id="availableCol" prefWidth="102.0" text="Διασέσιμα" />
+                                            </columns>
+                                        </TableView>
+                                    </children>
+                                </HBox>
+                            </children>
+                            <padding>
+                                <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                            </padding>
+                        </HBox>
+                        <Button fx:id="btnSubmit" disable="true" mnemonicParsing="false" text="Εύρεση Θέσεων" />
+                    </children>
+                    <BorderPane.margin>
+                        <Insets />
+                    </BorderPane.margin>
+                    <padding>
+                        <Insets bottom="50.0" left="100.0" right="100.0" top="50.0" />
+                    </padding>
+                </VBox>
+            </center>
+        </BorderPane>
+    </children>
+</StackPane>
