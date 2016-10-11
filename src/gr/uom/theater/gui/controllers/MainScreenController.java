@@ -1,11 +1,9 @@
-package gr.uom.theater.application.controllers;
+package gr.uom.theater.gui.controllers;
 
 import gr.uom.theater.application.Performance;
 import gr.uom.theater.application.Play;
 import gr.uom.theater.resources.Data;
 import gr.uom.theater.resources.Util;
-import javafx.beans.value.ChangeListener;
-import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -24,20 +22,15 @@ import java.io.IOException;
 public class MainScreenController {
 
     @FXML
+    TextArea lblSummary;
+    @FXML
     private TableColumn theaterCol, dateCol, timeCol, availableCol;
-
     @FXML
     private Button btnClear, btnApplyFilters, btnSubmit;
-
     @FXML
     private TableView tablePlays;
-
     @FXML
     private Label lblCostumes, lblMusic, lblActors, lblDirector, lblWriter;
-
-    @FXML
-    TextArea lblSummary;
-
     @FXML
     private ImageView imgPoster;
 
@@ -93,7 +86,7 @@ public class MainScreenController {
 
             @Override
             public ListCell<Play> call(ListView<Play> p) {
-                ListCell<Play> cell = new ListCell<Play>() {
+                return new ListCell<Play>() {
                     @Override
                     protected void updateItem(Play t, boolean bln) {
                         super.updateItem(t, bln);
@@ -102,7 +95,6 @@ public class MainScreenController {
                         }
                     }
                 };
-                return cell;
             }
         });
 
@@ -161,33 +153,29 @@ public class MainScreenController {
         cbMusic.getCheckModel().check(0);
         cbCostumes.getCheckModel().check(0);
 
-        lvPlays.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<Play>() {
-
-            @Override
-            public void changed(ObservableValue<? extends Play> observable, Play oldValue, Play newValue) {
-                if (newValue != null) {
-                    playInfoWrapper.setDisable(false);
-                    imgPoster.setImage(newValue.getPoster());
-                    performanceWrapper.setDisable(false);
-                    lblWriter.setText(Util.listToString(newValue.getWriters()));
-                    lblDirector.setText(Util.listToString(newValue.getDirectors()));
-                    lblActors.setText(Util.listToString(newValue.getActors()));
-                    lblMusic.setText(Util.listToString(newValue.getMusicians()));
-                    lblCostumes.setText(Util.listToString(newValue.getCostumes()));
-                    lblSummary.setText(newValue.getSummary());
-                    tablePlays.setItems(FXCollections.observableArrayList(newValue.getPerformances(Data.selectedCity)));
-                } else {
-                    imgPoster.setImage(Data.NO_IMAGE);
-                    performanceWrapper.setDisable(true);
-                    lblWriter.setText("-");
-                    lblDirector.setText("-");
-                    lblActors.setText("-");
-                    lblMusic.setText("-");
-                    lblCostumes.setText("-");
-                    lblSummary.setText("-");
-                    btnSubmit.setDisable(true);
-                    tablePlays.getItems().clear();
-                }
+        lvPlays.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) -> {
+            if (newValue != null) {
+                playInfoWrapper.setDisable(false);
+                imgPoster.setImage(newValue.getPoster());
+                performanceWrapper.setDisable(false);
+                lblWriter.setText(Util.listToString(newValue.getWriters()));
+                lblDirector.setText(Util.listToString(newValue.getDirectors()));
+                lblActors.setText(Util.listToString(newValue.getActors()));
+                lblMusic.setText(Util.listToString(newValue.getMusicians()));
+                lblCostumes.setText(Util.listToString(newValue.getCostumes()));
+                lblSummary.setText(newValue.getSummary());
+                tablePlays.setItems(FXCollections.observableArrayList(newValue.getPerformances(Data.selectedCity)));
+            } else {
+                imgPoster.setImage(Data.NO_IMAGE);
+                performanceWrapper.setDisable(true);
+                lblWriter.setText("-");
+                lblDirector.setText("-");
+                lblActors.setText("-");
+                lblMusic.setText("-");
+                lblCostumes.setText("-");
+                lblSummary.setText("-");
+                btnSubmit.setDisable(true);
+                tablePlays.getItems().clear();
             }
         });
     }

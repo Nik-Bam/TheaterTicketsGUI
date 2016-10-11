@@ -1,42 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.TextField?>
-<?import javafx.scene.layout.HBox?>
-<?import javafx.scene.layout.StackPane?>
-<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
 <?import javafx.scene.text.Font?>
-
-<StackPane prefHeight="200.0" prefWidth="300.0" styleClass="container" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gr.uom.theater.application.controllers.AdminLoginScreenController">
-   <children>
-      <VBox alignment="CENTER" spacing="15.0">
-         <children>
-            <HBox alignment="CENTER" spacing="10.0">
-               <children>
-                  <Label alignment="CENTER_RIGHT" minWidth="110.0" prefWidth="110.0" text="Όνομα Χρήστη :">
-                     <font>
-                        <Font name="System Bold Italic" size="12.0" />
-                     </font></Label>
-                  <TextField />
-               </children>
-            </HBox>
-            <HBox alignment="CENTER" layoutX="10.0" layoutY="48.0" spacing="10.0">
-               <children>
-                  <Label alignment="CENTER_RIGHT" minWidth="110.0" prefWidth="110.0" text="Κωδικός :">
-                     <font>
-                        <Font name="System Bold Italic" size="12.0" />
-                     </font></Label>
-                  <TextField />
-               </children>
-            </HBox>
-            <HBox alignment="CENTER" spacing="30.0">
-               <children>
-                  <Button fx:id="btnBack" minWidth="50.0" mnemonicParsing="false" prefWidth="50.0" text="Πίσω" />
-                  <Button fx:id="btnLogin" layoutX="10.0" layoutY="10.0" minWidth="50.0" mnemonicParsing="false" prefWidth="50.0" text="OK" />
-               </children>
-            </HBox>
-         </children>
-      </VBox>
-   </children>
+<StackPane prefHeight="200.0" prefWidth="300.0" styleClass="container" xmlns="http://javafx.com/javafx/8.0.65"
+           xmlns:fx="http://javafx.com/fxml/1"
+           fx:controller="gr.uom.theater.gui.controllers.AdminLoginScreenController">
+    <VBox alignment="CENTER" spacing="15.0">
+        <HBox alignment="CENTER" spacing="10.0">
+            <Label alignment="CENTER_RIGHT" minWidth="110.0" prefWidth="110.0" text="Όνομα Χρήστη :">
+                <font>
+                    <Font name="System Bold Italic" size="12.0"/>
+                </font>
+            </Label>
+            <TextField/>
+        </HBox>
+        <HBox alignment="CENTER" layoutX="10.0" layoutY="48.0" spacing="10.0">
+            <Label alignment="CENTER_RIGHT" minWidth="110.0" prefWidth="110.0" text="Κωδικός :">
+                <font>
+                    <Font name="System Bold Italic" size="12.0"/>
+                </font>
+            </Label>
+            <TextField/>
+        </HBox>
+        <HBox alignment="CENTER" spacing="30.0">
+            <Button minWidth="50.0" mnemonicParsing="false" prefWidth="50.0" text="Πίσω" fx:id="btnBack"/>
+            <Button layoutX="10.0" layoutY="10.0" minWidth="50.0" mnemonicParsing="false" prefWidth="50.0"
+                    text="OK" fx:id="btnLogin"/>
+        </HBox>
+    </VBox>
 </StackPane>

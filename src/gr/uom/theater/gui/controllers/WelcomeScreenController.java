@@ -1,4 +1,4 @@
-package gr.uom.theater.application.controllers;
+package gr.uom.theater.gui.controllers;
 
 import gr.uom.theater.resources.Data;
 import javafx.fxml.FXML;
@@ -42,16 +42,18 @@ public class WelcomeScreenController {
                 e.printStackTrace();
             }
 
-            Stage primaryStage = (Stage) ((Button) event.getSource()).getScene().getWindow();
-            Scene scene = new Scene(root, Data.SMALL_SCREEN_WIDTH, Data.SMALL_SCREEN_HEIGHT);
-            scene.getStylesheets().add(this.getClass().getResource("/gr/uom/theater/resources/css/Style.css").toExternalForm());
+            if (root != null) {
+                Stage primaryStage = (Stage) ((Button) event.getSource()).getScene().getWindow();
+                Scene scene = new Scene(root, Data.SMALL_SCREEN_WIDTH, Data.SMALL_SCREEN_HEIGHT);
+                scene.getStylesheets().add(this.getClass().getResource("/gr/uom/theater/resources/css/Style.css").toExternalForm());
 
-            primaryStage.centerOnScreen();
-            primaryStage.setResizable(false);
-            primaryStage.hide();
-            primaryStage.setTitle(title);
-            primaryStage.setScene(scene);
-            primaryStage.show();
+                primaryStage.centerOnScreen();
+                primaryStage.setResizable(false);
+                primaryStage.hide();
+                primaryStage.setTitle(title);
+                primaryStage.setScene(scene);
+                primaryStage.show();
+            }
         });
     }
 }

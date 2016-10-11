@@ -1,4 +1,4 @@
-package gr.uom.theater.application.controllers;
+package gr.uom.theater.gui.controllers;
 
 import gr.uom.theater.resources.Data;
 import javafx.fxml.FXML;

@@ -1,4 +1,4 @@
-package gr.uom.theater.application.controllers;
+package gr.uom.theater.gui.controllers;
 
 import gr.uom.theater.resources.Data;
 import javafx.fxml.FXML;
@@ -10,7 +10,7 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class ViewerLoginScreenController {
+public class AdminLoginScreenController {
 
     @FXML
     private Button btnLogin, btnBack;
@@ -19,7 +19,6 @@ public class ViewerLoginScreenController {
     private void initialize() {
         btnBack.setOnAction(event -> {
             try {
-                System.out.println();
                 Parent root = FXMLLoader.load(getClass().getResource("/gr/uom/theater/gui/WelcomeScreen.fxml"));
 
                 Stage primaryStage = (Stage) ((Button) event.getSource()).getScene().getWindow();
@@ -40,8 +39,7 @@ public class ViewerLoginScreenController {
 
         btnLogin.setOnAction(event -> {
             try {
-                System.out.println();
-                Parent root = FXMLLoader.load(getClass().getResource("/gr/uom/theater/gui/MainScreen.fxml"));
+                Parent root = FXMLLoader.load(getClass().getResource("/gr/uom/theater/gui/AdminMainScreen.fxml"));
 
                 Stage primaryStage = (Stage) ((Button) event.getSource()).getScene().getWindow();
 
@@ -51,7 +49,7 @@ public class ViewerLoginScreenController {
                 primaryStage.centerOnScreen();
                 primaryStage.setResizable(false);
                 primaryStage.hide();
-                primaryStage.setTitle("Έκδοση Εισητηρίων Θεάτρου");
+                primaryStage.setTitle("Πίνακας Διαχείρισης");
                 primaryStage.setScene(scene);
                 primaryStage.show();
             } catch (IOException e) {
