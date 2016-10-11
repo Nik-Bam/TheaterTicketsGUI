@@ -6,3 +6,5 @@ User Interface (non-functional) of ticketing software for a theater written in J
 * JavaFX
 * CSS
 
+## Authors
+* Nikos Bampamis - [Nik-Bam](https://github.com/Nik-Bam)
